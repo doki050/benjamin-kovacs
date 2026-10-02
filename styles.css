@@ -35,37 +35,52 @@ a { color: inherit; }
 }
 
 .intro {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: end;
-  gap: 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
   padding-bottom: clamp(34px, 5vw, 58px);
+  text-align: center;
   animation: enter .55s cubic-bezier(.2,.8,.2,1) both;
+}
+
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
 }
 
 h1 {
   margin: 0;
-  max-width: 500px;
-  font-size: clamp(1.55rem, 3.1vw, 2.55rem);
-  line-height: .98;
+  font-size: clamp(2.3rem, 5.2vw, 4.2rem);
+  line-height: .95;
   letter-spacing: -.045em;
   font-weight: 690;
 }
 
+.name {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 2.4vw, 1.9rem);
+  line-height: 1.1;
+  letter-spacing: -.03em;
+  font-weight: 560;
+}
+
 .profile-links {
   display: flex;
-  flex-direction: column;
-  min-width: 120px;
-  border-top: 1px solid var(--line);
+  flex-direction: row;
+  gap: 18px;
+  border-top: 0;
 }
 
 .profile-links a {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 19px;
-  padding: 12px 2px;
-  border-bottom: 1px solid var(--line);
+  gap: 7px;
+  padding: 0;
+  border-bottom: 0;
   text-decoration: none;
   font-size: 11px;
   font-weight: 560;
@@ -193,15 +208,11 @@ h3 {
 @media (max-width: 760px) {
   .page { width: min(100% - 22px, 460px); padding-top: 42px; }
 
-  .intro {
-    grid-template-columns: 1fr;
-    align-items: start;
-    gap: 30px;
-  }
+  .intro { gap: 20px; }
 
-  h1 { font-size: clamp(1.6rem, 7vw, 2.5rem); }
+  h1 { font-size: clamp(2rem, 10vw, 3rem); }
 
-  .profile-links { width: 100%; }
+  .name { font-size: clamp(1rem, 5vw, 1.4rem); }
 
   .section-heading {
     align-items: start;
